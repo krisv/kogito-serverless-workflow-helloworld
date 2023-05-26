@@ -1,0 +1,32 @@
+{
+  "id": "systout",
+  "specVersion": "0.8.0",
+  "name": "Hello Sysout",
+  "start": "HelloWorld",
+  "functions": [
+    {
+      "name": "sysout",
+      "operation": "sysout",
+      "type": "custom"
+    }
+  ],
+  "states": [
+    {
+      "name": "HelloWorld",
+      "type": "operation",
+      "actions": [
+        {
+          "name": "sysout",
+          "functionRef": {
+            "refName": "sysout",
+            "arguments": {
+              "message": ".name"
+            }
+          }
+
+        }
+      ],
+      "end": true
+    }
+  ]
+}

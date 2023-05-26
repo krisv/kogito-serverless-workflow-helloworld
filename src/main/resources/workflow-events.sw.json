@@ -1,0 +1,62 @@
+{
+  "id": "events",
+  "specVersion": "0.8.0",
+  "name": "Hello Events",
+  "start": "StartEvent",
+  "events": [{
+    "name": "in",
+    "source": "in",
+    "type": "in"
+  },{
+    "name": "wait",
+    "source": "wait",
+    "type": "wait"
+  },{
+    "name": "out",
+    "source": "out",
+    "type": "out"
+  }
+  ],
+  "states": [
+    {
+      "name": "StartEvent",
+      "type": "event",
+      "onEvents": [
+        {
+          "eventRefs": [
+            "in"
+          ]
+        }
+      ],
+      "transition": "WaitEvent",
+      "end": false
+    },
+    {
+      "name": "WaitEvent",
+      "type": "event",
+      "onEvents": [
+        {
+          "eventRefs": [
+            "wait"
+          ]
+        }
+      ],
+      "transition": "HelloWorld",
+      "end": false
+    },
+    {
+      "name": "HelloWorld",
+      "type": "inject",
+      "data": {
+        "message": "Hello Event"
+      },
+      "end": {
+        "produceEvents": [
+          {
+            "eventRef": "out"
+          }
+        ]
+      }
+    }
+  ]
+}
