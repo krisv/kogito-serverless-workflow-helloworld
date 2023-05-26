@@ -3,11 +3,11 @@
   "specVersion": "0.8.0",
   "name": "Hello Service",
   "start": "Service",
-  "dataInputSchema": "workflow-service-schema.json",
+  "dataInputSchema": "specs/workflow-service-schema.json",
   "functions": [
     {
       "name": "isWinner",
-      "operation": "workflow-service-openapi.json#isWinner",
+      "operation": "specs/workflow-service-openapi.json#isWinner",
       "type": "rest"
     }
   ],
